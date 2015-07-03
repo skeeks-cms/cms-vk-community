@@ -1,0 +1,27 @@
+{
+    "name": "skeeks/cms-vk-comments",
+    "description": "Виджет для комментариев VK",
+    "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2"],
+    "homepage": "http://www.skeeks.com/",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "http://cms.skeeks.com",
+        "wiki": "http://git.skeeks.com/skeeks/cms/wikis/home",
+        "source": "http://git.skeeks.com/skeeks/cms"
+    },
+    "authors": [
+        {
+            "name": "Semenov Alexander",
+            "email": "semenov@skeeks.com"
+        }
+    ],
+    "require": {
+        "skeeks/cms": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "skeeks\\cms\\vk\\comments": ""
+        }
+    }
+}
