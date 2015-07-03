@@ -22,6 +22,16 @@
 php yii cms/update
 ```
 
+3) Пример использования
+
+```php
+
+<?= \skeeks\cms\vk\comments\VkCommentsWidget::widget([
+    'namespace' => 'VkCommentsWidget-main',
+    'apiId'     => 4982033
+]); ?>
+
+```
 
 
 > [![skeeks!](https://gravatar.com/userimage/74431132/13d04d83218593564422770b616e5622.jpg)](http://www.skeeks.com)  
