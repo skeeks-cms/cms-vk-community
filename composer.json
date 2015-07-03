@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "skeeks\\cms\\vk\\comments": ""
+            "skeeks\\cms\\vk\\comments\\": ""
         }
     }
 }
