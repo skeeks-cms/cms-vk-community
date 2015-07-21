@@ -1,6 +1,6 @@
 {
-    "name": "skeeks/cms-vk-comments",
-    "description": "Виджет для комментариев VK",
+    "name": "skeeks/cms-vk-community",
+    "description": "Виджет для сообществ VK",
     "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2"],
     "homepage": "http://www.skeeks.com/",
     "type": "yii2-extension",
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "skeeks\\cms\\vk\\comments\\": ""
+            "skeeks\\cms\\vk\\community\\": ""
         }
     }
 }

@@ -6,14 +6,13 @@
  * @date 03.07.2015
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\vk\comments\VkCommentsWidget */
+/* @var $widget \skeeks\cms\vk\community\VkCommunityWidget */
 ?>
 
 <? if ($widget->apiId) : ?>
     <?
     $this->registerJs(<<<JS
-        VK.init({apiId: {$widget->apiId}, onlyWidgets: true});
-        VK.Widgets.Comments("{$widget->id}", {$widget->getJsonOptions()});
+        VK.Widgets.Group("{$widget->id}", {$widget->getJsonOptions()}, {$widget->apiId});
 JS
     );
     ?>

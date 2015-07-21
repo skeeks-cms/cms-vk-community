@@ -1,10 +1,10 @@
-Виджет комментарии VK
+Виджет для сообществ VK
 ===================================
 
 Информация
 -------------------
 
-Виджет комментарии VK
+Виджет для сообществ VK
 
 Установка
 ------------
@@ -13,7 +13,7 @@
 1) Добавить в `composer.json` файл проекта.
 
 ```
-"skeeks/cms-vk-comments": "*"
+"skeeks/cms-vk-community": "*"
 ```
 
 2) Запуск миграций и необходимых установок.
@@ -26,8 +26,8 @@ php yii cms/update
 
 ```php
 
-<?= \skeeks\cms\vk\comments\VkCommentsWidget::widget([
-    'namespace' => 'VkCommentsWidget-main',
+<?= \skeeks\cms\vk\community\VkCommunityWidget::widget([
+    'namespace' => 'VkCommunityWidget-main',
     'apiId'     => 4982033
 ]); ?>
 
