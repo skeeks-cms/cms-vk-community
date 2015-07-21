@@ -12,7 +12,7 @@
 <? if ($widget->apiId) : ?>
     <?
     $this->registerJs(<<<JS
-        VK.Widgets.Group("{$widget->id}", {$widget->getJsonOptions()}, {$widget->apiId});
+        VK.Widgets.Group("{$widget->id}", {$widget->getJsonOptions()}, "{$widget->apiId}");
 JS
     );
     ?>

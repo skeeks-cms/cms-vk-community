@@ -43,7 +43,7 @@ class VkCommunityWidget extends WidgetRenderable
      /**
      * @var string
      */
-    public $selectMode = self::MODE_NEWS;
+    public $selectMode = self::MODE_MEMBER;
 
     public $apiId;
 
@@ -71,7 +71,7 @@ class VkCommunityWidget extends WidgetRenderable
         return array_merge(parent::attributeLabels(),
         [
             'apiId'                 => 'ID приложения vk',
-            'mode'                  => 'Вид',
+            'selectMode'            => 'Вид',
             'height'                => 'Максимальную высоту виджета в пикселях',
             'width'                 => 'Ширина блока',
 
@@ -87,16 +87,16 @@ class VkCommunityWidget extends WidgetRenderable
     {
         return ArrayHelper::merge(parent::rules(),
         [
-            [['apiId'],     'integer'],
-            [['apiId'],     'required'],
-            [['width'],     'integer', 'min' => 120],
-            [['height'],    'integer', 'min' => 250],
-            [['wide'],      'integer'],
-            [['mode'],      'integer'],
-            [['mode'],      'required'],
-            [['color1'],    'string'],
-            [['color2'],    'string'],
-            [['color3'],    'string'],
+            [['apiId'],         'integer'],
+            [['apiId'],         'required'],
+            [['width'],         'integer', 'min' => 120],
+            [['height'],        'integer', 'min' => 250],
+            [['wide'],          'integer'],
+            [['selectMode'],    'integer'],
+            [['selectMode'],    'required'],
+            [['color1'],        'string'],
+            [['color2'],        'string'],
+            [['color3'],        'string'],
         ]);
     }
 
