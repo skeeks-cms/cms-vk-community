@@ -8,14 +8,12 @@
 /* @var $this yii\web\View */
 use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 
+\skeeks\cms\vk\community\VkCommunityAssetInnerFile::register($this);
+
 $id = \yii\helpers\Html::getInputId($model, 'apiId');
 ?>
 
 <?
-$this->registerJsFile('http://nelya.russiakurort.ru//js/plugins/jquery-jsonp/jquery.jsonp.js?984a1968989313b6868f57d75d5d3894',
-[
-    'depends' => 'yii\web\YiiAsset'
-]);
 $this->registerJs(<<<JS
 
 
