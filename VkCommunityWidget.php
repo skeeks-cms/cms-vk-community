@@ -24,7 +24,7 @@ class VkCommunityWidget extends WidgetRenderable
     const MODE_NEWS         = 2;
     const MODE_NAME         = 1;
 
-    public $wide            = 0;
+    public $wide            = Cms::BOOL_N;
     public $width           = 220;
     public $height          = 400;
     public $autoPublish     = 1;
@@ -91,7 +91,7 @@ class VkCommunityWidget extends WidgetRenderable
             [['apiId'],         'required'],
             [['width'],         'integer', 'min' => 120],
             [['height'],        'integer', 'min' => 250],
-            [['wide'],          'integer'],
+            [['wide'],          'string'],
             [['selectMode'],    'integer'],
             [['selectMode'],    'required'],
             [['color1'],        'string'],
@@ -115,7 +115,7 @@ class VkCommunityWidget extends WidgetRenderable
         if ($this->selectMode == self::MODE_NEWS)
         {
             $res = array_merge($res, [
-                'wide' => (int) $this->wide
+                'wide' => (int) ($this->wide == Cms::BOOL_Y)
             ]);
         }
         else

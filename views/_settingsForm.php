@@ -21,9 +21,6 @@ $this->registerJs(<<<JS
 {
     sx.classes.VkSubmiter = sx.classes.Component.extend({
 
-        _init: function()
-        {},
-
         _onDomReady: function()
         {
             var self = this;
@@ -31,6 +28,13 @@ $this->registerJs(<<<JS
             {
                 self.submit( $('#vk-input').val() );
                 return this;
+            });
+
+            $('.show_id_group').on('click', function(){
+                $('.id_group').toggle();
+                $('.show_id_group').clean();
+                $('.show_id_group').text('');
+                return false;
             });
         },
 
@@ -70,12 +74,7 @@ $this->registerJs(<<<JS
     new sx.classes.VkSubmiter();
 })(sx, sx.$, sx._);
 
-    $('.show_id_group').on('click', function(){
-        $('.id_group').toggle();
-        $('.show_id_group').clean();
-        $('.show_id_group').text('');
-        return false;
-    });
+
 JS
 );
 ?>
@@ -86,26 +85,32 @@ JS
     <?= $form->fieldSetEnd(); ?>
 
     <?= $form->fieldSet('Параметры виджета'); ?>
-        <div class="form-inline">
-            <?= \yii\helpers\Html::label('Название группы в VK', 'vk-input'); ?>
-            <div class="form_group">
-                <?= \yii\helpers\Html::textInput('group_name', '', [
-                    'id' => 'vk-input',
-                    'class' => 'form-control',
-                ]); ?>
-
-            <?= \yii\helpers\Html::a('Определить ID', '#', [
-                'id' => 'btn-vk-submit',
-                'class' => 'btn btn-default'
-            ]); ?>
-            </div>
-        </div>
-        <p <a href="#" class="show_id_group">Показать id группы</a></p>
+        <?= $form->fieldInputInt($model, 'apiId'); ?>
+        <p>Как получить id приложения подробно описано <a href="http://vk.com/pages?oid=-4489985&p=%D0%9A%D0%B0%D0%BA_%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C_id_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B_%D0%B8%D0%BB%D0%B8_%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8F%3F" target="_blank">здесь</a>.</p>
+        <p> <a href="#" class="show_id_group">Я знаю название группы, определить ID</a></p>
         <div class="id_group" style="display: none;">
-            <?= $form->fieldInputInt($model, 'apiId'); ?>
-            <p>Как получить id приложения подробно описано <a href="http://vk.com/pages?oid=-4489985&p=%D0%9A%D0%B0%D0%BA_%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C_id_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B_%D0%B8%D0%BB%D0%B8_%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8F%3F" target="_blank">здесь</a>.</p>
+            <div class="form-inline">
+                <?= \yii\helpers\Html::label('Название группы в VK', 'vk-input'); ?>
+                <div class="form_group">
+                    <?= \yii\helpers\Html::textInput('group_name', '', [
+                        'id' => 'vk-input',
+                        'class' => 'form-control',
+                    ]); ?>
+
+                <?= \yii\helpers\Html::a('Определить ID', '#', [
+                    'id' => 'btn-vk-submit',
+                    'class' => 'btn btn-default'
+                ]); ?>
+                </div>
+            </div>
+            <hr />
         </div>
-        <?= $form->field($model, 'selectMode')->radioList(\skeeks\cms\vk\community\VkCommunityWidget::$possibleMode); ?>
+        <?= $form->field($model, 'selectMode', [
+            'options' =>
+            [
+                'id' => 'sx-selectMode'
+            ]
+        ])->radioList(\skeeks\cms\vk\community\VkCommunityWidget::$possibleMode); ?>
 
         <?= $form->fieldCheckboxBoolean($model, 'wide')->hint('используется только для новостей'); ?>
 
