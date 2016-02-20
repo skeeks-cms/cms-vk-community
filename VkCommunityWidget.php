@@ -24,6 +24,8 @@ class VkCommunityWidget extends WidgetRenderable
     const MODE_NEWS         = 2;
     const MODE_NAME         = 1;
 
+    public $adaptiveWith    = true;
+
     public $wide            = Cms::BOOL_N;
     public $width           = 220;
     public $height          = 400;
