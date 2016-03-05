@@ -11,6 +11,7 @@ use skeeks\cms\base\WidgetRenderable;
 use skeeks\cms\components\Cms;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
+use yii\widgets\ActiveForm;
 
 /**
  * @property string $jsonOptions
@@ -56,15 +57,12 @@ class VkCommunityWidget extends WidgetRenderable
         ]);
     }
 
-    /**
-     * Файл с формой настроек, по умолчанию
-     *
-     * @return string
-     */
-    public function getConfigFormFile()
+    public function renderConfigForm(ActiveForm $form)
     {
-        $class = new \ReflectionClass($this->className());
-        return dirname($class->getFileName()) . DIRECTORY_SEPARATOR . 'views/_settingsForm.php';
+        echo \Yii::$app->view->renderFile(__DIR__ . '/views/_settingsForm.php', [
+            'form'  => $form,
+            'model' => $this
+        ], $this);
     }
 
 

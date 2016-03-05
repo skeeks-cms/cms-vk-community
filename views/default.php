@@ -84,7 +84,7 @@
 JS
     );
     ?>
-    <div class="sx-vk-widget-wrapper">
+    <div class="sx-vk-widget-community-wrapper">
         <div id="<?= $widget->id; ?>"></div>
     </div>
 
