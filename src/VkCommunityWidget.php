@@ -128,12 +128,13 @@ class VkCommunityWidget extends WidgetRenderable
         }
         return Json::encode($res);
     }
+
     /**
      * @return string
      */
-    protected function _run()
+    public function run()
     {
         VkCommunityAsset::register($this->view);
-        return parent::_run();
+        return parent::run();
     }
 }
